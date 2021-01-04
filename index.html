@@ -74,15 +74,15 @@
                 }
 
                 function displayLost(computerSelection, playerSelection) {
-                    let playerFormat = playerSelection[0].toUpperCase() + playerSelection.substring(1);
-                    let computerFormat = computerSelection[0].toUpperCase() + computerSelection.substring(1);
-                    console.log(`You lost! ${computerFormat} beats ${playerFormat}`);
+                    console.log(`You lost! ${capitalize(computerSelection)} beats ${capitalize(playerSelection)}`);
                 }
 
                 function displayWin(playerSelection, computerSelection) {
-                    let playerFormat = playerSelection[0].toUpperCase() + playerSelection.substring(1);
-                    let computerFormat = computerSelection[0].toUpperCase() + computerSelection.substring(1);
-                    console.log(`You win! ${playerFormat} beats ${computerFormat}`);
+                    console.log(`You win! ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}`);
+                }
+
+                function capitalize(str) {
+                    return str[0].toUpperCase() + str.substring(1);
                 }
 
                 function winner() {
