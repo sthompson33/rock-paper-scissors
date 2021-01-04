@@ -5,7 +5,90 @@
         </head>
         <body>
             <script>
-                
+
+                let userWins = 0;
+                let computerWins = 0;
+                game();
+
+                function game() { 
+                    let keepGoing = true;
+                    while(keepGoing) {
+                        playRound(prompt('Choose Rock, Paper or Scissors'), computerPlay());
+                        if(userWins === 5 || computerWins === 5) {
+                            keepGoing = false;
+                        }
+                    }
+                    console.log(winner());     
+                }
+               
+                function computerPlay() {
+                    let choices = ['rock', 'paper', 'scissors'];
+                    return choices[Math.floor(Math.random() * 3)];
+                }
+               
+                function playRound(playerSelection, computerSelection) {
+                    let choice = playerSelection.toLowerCase();
+                    switch(choice) {
+                        case 'rock': {
+                            if(computerSelection === 'rock') {
+                                displayTie('rock');
+                            } else if (computerSelection === 'paper') {
+                                displayLost(computerSelection, 'rock');
+                                computerWins++;
+                            } else {
+                                displayWin(playerSelection, computerSelection);
+                                userWins++;
+                            }
+                            break;
+                        }
+                        case 'paper': {
+                            if(computerSelection === 'paper') {
+                                displayTie('paper');
+                            } else if (computerSelection === 'scissors') {
+                                displayLost(computerSelection, 'paper');
+                                computerWins++;
+                            } else {
+                                displayWin(playerSelection, computerSelection);
+                                userWins++;
+                            }
+                            break;
+                        }
+                        case 'scissors': {
+                            if(computerSelection === 'scissors') {
+                                displayTie('scissors');
+                            } else if (computerSelection === 'rock') {
+                                displayLost(computerSelection, 'scissors');
+                                computerWins++;
+                            } else {
+                                displayWin(playerSelection, computerSelection);
+                                userWins++;
+                            }
+                            break;
+                        }
+                    }
+                    
+                }
+
+                function displayTie(sameChoice) {
+                    console.log(`Tie Game! You and the Computer both chose ${sameChoice[0].toUpperCase() + sameChoice.substring(1)}.`);
+                }
+
+                function displayLost(computerSelection, playerSelection) {
+                    let playerFormat = playerSelection[0].toUpperCase() + playerSelection.substring(1);
+                    let computerFormat = computerSelection[0].toUpperCase() + computerSelection.substring(1);
+                    console.log(`You lost! ${computerFormat} beats ${playerFormat}`);
+                }
+
+                function displayWin(playerSelection, computerSelection) {
+                    let playerFormat = playerSelection[0].toUpperCase() + playerSelection.substring(1);
+                    let computerFormat = computerSelection[0].toUpperCase() + computerSelection.substring(1);
+                    console.log(`You win! ${playerFormat} beats ${computerFormat}`);
+                }
+
+                function winner() {
+                    return (userWins > computerWins) ? 'You beat the computer!' : 'You lost to the computer!';
+                }
+
             </script>
         </body>
     </html>
