@@ -1,1 +1,2 @@
-initial commit for rock-paper-scissors
+After several commits and some refactoring done, code for the classic Rock, Paper, Scissors game is done. Currently only plays through console...
+
