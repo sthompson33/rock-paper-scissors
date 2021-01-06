@@ -11,14 +11,13 @@
                 game();
 
                 function game() { 
-                    let keepGoing = true;
-                    while(keepGoing) {
+                    while(true) {
                         playRound(prompt('Choose Rock, Paper or Scissors'), computerPlay());
                         if(userWins === 5 || computerWins === 5) {
-                            keepGoing = false;
+                            break;
                         }
                     }
-                    console.log(winner());     
+                    console.log((userWins > computerWins) ? 'You beat the computer!' : 'You lost to the computer!');     
                 }
                
                 function computerPlay() {
@@ -27,66 +26,26 @@
                 }
                
                 function playRound(playerSelection, computerSelection) {
-                    let choice = playerSelection.toLowerCase();
-                    switch(choice) {
-                        case 'rock': {
-                            if(computerSelection === 'rock') {
-                                displayTie('rock');
-                            } else if (computerSelection === 'paper') {
-                                displayLost(computerSelection, 'rock');
-                                computerWins++;
-                            } else {
-                                displayWin(playerSelection, computerSelection);
-                                userWins++;
-                            }
+                    playerSelection = playerSelection.toLowerCase();
+                    switch(true) {
+                        case (playerSelection === computerSelection): 
+                            console.log(`Tie Game! You and the Computer both chose ${capitalize(playerSelection)}.`);
                             break;
-                        }
-                        case 'paper': {
-                            if(computerSelection === 'paper') {
-                                displayTie('paper');
-                            } else if (computerSelection === 'scissors') {
-                                displayLost(computerSelection, 'paper');
-                                computerWins++;
-                            } else {
-                                displayWin(playerSelection, computerSelection);
-                                userWins++;
-                            }
+                        case (playerSelection === 'rock' && computerSelection === 'scissors'): 
+                        case (playerSelection === 'paper' && computerSelection === 'rock'):
+                        case (playerSelection === 'scissors' && computerSelection === 'paper'): 
+                            console.log(`You win! ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}`);
+                            userWins++;
                             break;
-                        }
-                        case 'scissors': {
-                            if(computerSelection === 'scissors') {
-                                displayTie('scissors');
-                            } else if (computerSelection === 'rock') {
-                                displayLost(computerSelection, 'scissors');
-                                computerWins++;
-                            } else {
-                                displayWin(playerSelection, computerSelection);
-                                userWins++;
-                            }
+                        default:
+                            console.log(`You lost! ${capitalize(computerSelection)} beats ${capitalize(playerSelection)}`);
+                            computerWins++;
                             break;
-                        }
                     }
-                    
-                }
-
-                function displayTie(sameChoice) {
-                    console.log(`Tie Game! You and the Computer both chose ${sameChoice[0].toUpperCase() + sameChoice.substring(1)}.`);
-                }
-
-                function displayLost(computerSelection, playerSelection) {
-                    console.log(`You lost! ${capitalize(computerSelection)} beats ${capitalize(playerSelection)}`);
-                }
-
-                function displayWin(playerSelection, computerSelection) {
-                    console.log(`You win! ${capitalize(playerSelection)} beats ${capitalize(computerSelection)}`);
                 }
 
                 function capitalize(str) {
                     return str[0].toUpperCase() + str.substring(1);
-                }
-
-                function winner() {
-                    return (userWins > computerWins) ? 'You beat the computer!' : 'You lost to the computer!';
                 }
 
             </script>
