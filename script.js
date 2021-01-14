@@ -1,6 +1,6 @@
 let userWins = 0;
 let computerWins = 0;
-game();
+//game();
 
 function game() { 
     while(true) {

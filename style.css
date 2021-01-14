@@ -1,3 +1,62 @@
 *, *::before, *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    outline: none;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #d3d3d3;
+}
+
+.carbon-color {
+    color: #858585
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #CAEBF2;
+    margin-top: 40px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.playerHalf {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 50vw;
+}
+
+.playerHalf button {
+    width: 200px;
+    height: 125px;
+    margin-right: 75px;
+    border-radius: 12px;
+    border: 5px solid #858585;
+}
+
+.playerHalf button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 1em #CAEBF2;
+    border-color: #CAEBF2;
+    transform: scale(1.1);
+
+}
+
+.computerHalf {
+    width: 50vw;
+}
+
+.computerHalf img {
+    margin-left: 75px;
+}
+
