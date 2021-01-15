@@ -20,28 +20,30 @@ header {
     flex-direction: column;
     align-items: center;
     background-color: #CAEBF2;
-    margin-top: 40px;
+    padding: 20px;
 }
 
 .container {
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
 }
 
 .playerHalf {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-end;
-    width: 50vw;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .playerHalf button {
     width: 200px;
     height: 125px;
-    margin-right: 75px;
+    margin: 10px;
     border-radius: 12px;
     border: 5px solid #858585;
+}
+
+.playerHalf img {
+    height: 120px;
 }
 
 .playerHalf button:hover {
@@ -49,14 +51,33 @@ header {
     box-shadow: 0 0 1em #CAEBF2;
     border-color: #CAEBF2;
     transform: scale(1.1);
-
 }
 
 .computerHalf {
-    width: 50vw;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .computerHalf img {
-    margin-left: 75px;
+    margin-left: 50px;
 }
 
+.screen {
+    position: absolute;
+    margin-top: 34px;
+    height: 292px;
+    width: 450px;
+}
+
+.counter {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 15px;
+    justify-content: space-between;
+}
+
+.counter p {
+    color: rgb(211, 39, 62);
+    font-size: 24px;
+}
