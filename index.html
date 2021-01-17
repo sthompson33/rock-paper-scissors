@@ -5,26 +5,30 @@
             <meta name="viewport" conten="width=device-width, initial-scale=1.0"/>
             <title>Rock-Paper-Scissors</title>
             <link rel="stylesheet" type ="text/css" href="style.css">
+            <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
         </head>
         <body>
             <header>
-                <h1 class="carbon-color">Rock Paper Scissors</h1>
-                <h2 class="carbon-color"> First to 5 wins!</h2>
+                <h1>Rock Paper Scissors</h1>
+                <h2> First to 5 wins!</h2>
             </header>
             <div class="container">
                 <div class="computerHalf">
                     <img src="images/computer.png" alt="picture of computer">
                     <div class="screen">
-                        <div class="counter">
-                            <p id="computerScore">PCMR:         0</p>    
-                            <p id="playerScore">Silly Human:    0</p>
-                        </div>
+                       <label id="compLabel" for="compScore">PCMR:</label>
+                       <p id="compScore">0</p>
+                       <label id="humanLabel" for="humanScore">Silly Human:</label>
+                       <p id="humanScore">0</p>
+                       <button id="playbtn">Dare to Play?</button>
+                       <img src="" id="compChoice">
+                       <p id="displayResult"></p>
                     </div>
                 </div>
                 <div class="playerHalf">
-                    <button id="rockbtn"><img src="/images/rock.png"></button>
-                    <button id="paperbtn"><img src="/images/paper.png"></button>
-                    <button id="scissorsbtn"><img src="/images/scissors.png"></button>
+                    <button id="rockbtn"><img src="images/rock.png"></button>
+                    <button id="paperbtn"><img src="images/paper.png"></button>
+                    <button id="scissorsbtn"><img src="images/scissors.png"></button>
                 </div>
             </div>
             <script src="script.js"></script>
