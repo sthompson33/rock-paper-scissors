@@ -84,18 +84,12 @@ function capitalize(str) {
 
 function playSound(e) {
     let audio;
-    switch(e.target.id) {
-        case 'startbtn':
-            audio = document.querySelector('#startGame');
-            audio.play();
-            break;
-        case 'rockbtn':
-        case 'paperbtn':
-        case 'scissorsbtn':
-            audio = document.querySelector('#clickSound');
-            audio.play();
-            break;
+    if(e.target.id == 'startbtn') {
+        audio = document.querySelector('#startGame');
+    } else {
+        audio = document.querySelector('#clickSound');
     }
+    audio.play();
 }
 
 function disablePlayerButtons() {
