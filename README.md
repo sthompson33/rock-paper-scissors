@@ -5,6 +5,7 @@
   <li>Reinforced knowledge with flexbox</li>
   <li>Used grid for the first time</li>
   <li>DOM manipulation with JS</li>
+  <li>Absolute and Relative Positioning</li>
 </ul>
 <a href="https://sthompson33.github.io/rock-paper-scissors/">Live Version</a>
 
