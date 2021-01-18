@@ -1,2 +1,10 @@
-After several commits and some refactoring done, code for the classic Rock, Paper, Scissors game is done. Currently only plays through console...
+<h2>Rock Paper Scissors</h2>
+<p>Game is played through browser window against the computer.</p>
+<p>What I gained from this project..</p>
+<ul>
+  <li>Reinforced knowledge with flexbox</li>
+  <li>Used grid for the first time</li>
+  <li>DOM manipulation with JS</li>
+</ul>
+<a href="https://sthompson33.github.io/rock-paper-scissors/">Live Version</a>
 
