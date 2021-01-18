@@ -8,10 +8,12 @@
             <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
         </head>
         <body>
+            
             <header>
                 <h1>Rock Paper Scissors</h1>
                 <h2> First to 5 wins!</h2>
             </header>
+            
             <div class="container">
                 <div class="computerHalf">
                     <img src="images/computer.png" alt="picture of computer">
@@ -31,6 +33,12 @@
                     <button id="scissorsbtn"><img src="images/scissors.png"></button>
                 </div>
             </div>
+            
+            <audio id="startGame" src="audio/startGame.mp3"></audio>
+            <audio id="clickSound" src="audio/click.wav"></audio>
+            <audio id="lostGame" src="audio/computer-lost.mp3"></audio>
+            <audio id="wonGame" src="audio/computer-won.mp3"></audio>
+            
             <script src="script.js"></script>
         </body>
     </html>
